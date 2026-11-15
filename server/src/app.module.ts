@@ -27,7 +27,7 @@ import { MailModule } from './mail/mail.module.js';
     ADMIN_SIGNUP_CODE: Joi.string().min(8).required(), PORT: Joi.number().default(3000),
     SMTP_HOST: Joi.string().allow('').optional(), SMTP_PORT: Joi.number().optional(),
     SMTP_USER: Joi.string().allow('').optional(), SMTP_PASS: Joi.string().allow('').optional(), SMTP_FROM: Joi.string().allow('').optional(),
-    RESEND_API_KEY: Joi.string().allow('').optional(), MAIL_FROM: Joi.string().allow('').optional(), MAIL_REDIRECT_TO: Joi.string().allow('').optional(),
+    CRON_SECRET: Joi.string().allow('').optional(), RESEND_API_KEY: Joi.string().allow('').optional(), MAIL_FROM: Joi.string().allow('').optional(), MAIL_REDIRECT_TO: Joi.string().allow('').optional(),
     CLOUDINARY_CLOUD_NAME: Joi.string().allow('').optional(), CLOUDINARY_API_KEY: Joi.string().allow('').optional(), CLOUDINARY_API_SECRET: Joi.string().allow('').optional(),
   }).unknown(true) }),
   ScheduleModule.forRoot(), ThrottlerModule.forRoot([{ ttl: 60000, limit: 60 }]),
