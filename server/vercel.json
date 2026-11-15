@@ -2,11 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "npm install",
-  "buildCommand": "npx prisma generate && npm run build",
+  "buildCommand": "npx prisma generate && npm run build && node scripts/bundle-vercel.mjs",
   "outputDirectory": "public",
   "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
   "functions": {
-    "api/index.js": { "maxDuration": 60, "includeFiles": "dist/**" }
+    "api/index.js": { "maxDuration": 60, "includeFiles": "node_modules/.prisma/client/**" }
   },
   "crons": [{ "path": "/api/cron/run", "schedule": "0 6 * * *" }]
 }
